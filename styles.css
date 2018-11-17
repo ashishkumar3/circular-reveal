@@ -1,0 +1,49 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "DIN Condensed", Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-reveal{
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.circular-reveal img{
+    width: 100%;
+}
+
+.circular-reveal::after{
+    content: 'Naruto Uzumaki';
+    position: absolute;
+    background: rgba(255, 217, 0, 0.185);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    /* top:0; removing this works, no idea why */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    transition: transform 0.2s cubic-bezier(0,0,0.3,1),
+                opacity 0.2s cubic-bezier(0,0,0.3,1);
+    transform: rotate(10deg);
+    opacity: 0;
+}
+
+.circular-reveal:hover::after{
+    transform: rotate(0deg);
+    opacity: 1;
+}
