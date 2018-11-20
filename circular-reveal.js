@@ -10,10 +10,13 @@
     let innerScale = 1 / elementScale;
 
     element.addEventListener('pointerover', ()=>{
+        console.log('in');
         targetScale = inScale;
+        
     })
 
-    inner.addEventListener('pointerout', ()=>{
+    element.addEventListener('pointerout', ()=>{
+        console.log('out');
         targetScale = outScale;
     })
 
@@ -24,9 +27,9 @@
         element.style.transform = `scale(${elementScale})`;
         inner.style.transform = `scale(${innerScale})`;
 
-        requestAnimationFrame(update)
+        requestAnimationFrame(update);
     }
-
+    
     requestAnimationFrame(update);
 
 })();
